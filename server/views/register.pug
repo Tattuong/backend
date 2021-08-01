@@ -1,0 +1,132 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css' integrity='sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+  link(rel='icon' type='image/png' sizes='32x32' href='./image/apple-icon-120x120.webp')
+  link(rel='stylesheet' href='../stylesheets/style1.css')
+  title Buy me a coffe
+.container-fluid
+  .new-home-header.flex.flex-sp-btw
+    .p-relative
+      a.p-absolute.ab-link(href='/')
+       img.img-fluid(src='./image/bmc-new-logo.webp' width='214px' height='52px' alt='coffee')
+    .menu-wrap
+      .flex.flex-vert-center
+        button#login-btn.btn.btn-outline(style='width:auto;')
+          
+          a.hh(href='#') Log in
+        #id01.modal
+          .modal-c
+            form.modal-content.animate()
+              .imgcontainer
+                span.close(onclick="document.getElementById('id01').style.display='none'" title='Close Modal') &times;
+              // login
+              .t
+                h1(style='text-align: center;') Welcome back.
+                .division
+                  .line.l
+                  span Or login with email
+                  .line.r
+              #a.flex.flex-sp-btw
+                .align-center
+                  a#google-login-page(href='')
+                    .w-h-64.flex.flex-both-center
+                      svg(width='23' height='24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M22.7083 11.8497C22.7083 11.0623 22.6444 10.2707 22.5082 9.49609H11.5829V13.9565H17.8393C17.5797 15.395 16.7455 16.6676 15.524 17.4762V20.3704H19.2566C21.4485 18.353 22.7083 15.3737 22.7083 11.8497Z' fill='#4285F4')
+                        path(d='M11.583 23.1666C14.7069 23.1666 17.3414 22.1409 19.2609 20.3703L15.5283 17.4762C14.4899 18.1827 13.1492 18.5828 11.5872 18.5828C8.56539 18.5828 6.00324 16.5441 5.08393 13.8032H1.23218V16.7867C3.19848 20.6981 7.20345 23.1666 11.583 23.1666Z' fill='#34A853')
+                        path(d='M5.07963 13.8033C4.59443 12.3648 4.59443 10.8071 5.07963 9.36852V6.38501H1.23213C-0.410711 9.65793 -0.410711 13.5139 1.23213 16.7869L5.07963 13.8033Z' fill='#FBBC04')
+                        path(d='M11.583 4.58457C13.2343 4.55904 14.8303 5.18042 16.0263 6.32105L19.3333 3.01408C17.2393 1.04777 14.4601 -0.033268 11.583 0.000780559C7.20345 0.000780559 3.19848 2.4693 1.23218 6.38489L5.07967 9.3684C5.99473 6.62323 8.56114 4.58457 11.583 4.58457Z' fill='#EA4335')
+                    .av-medium Google
+                .align-center
+                  a#fb-login-page(href='')
+                    .w-h-64.flex.flex-both-center
+                      svg(width='12' height='22' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M11.316 0.00440392L8.49561 0C5.32698 0 3.27927 2.04452 3.27927 5.20895V7.61063H0.443482C0.198435 7.61063 0 7.80396 0 8.04243V11.5222C0 11.7607 0.198662 11.9538 0.443482 11.9538H3.27927V20.7343C3.27927 20.9728 3.47771 21.1659 3.72276 21.1659H7.42266C7.66771 21.1659 7.86614 20.9726 7.86614 20.7343V11.9538H11.1818C11.4269 11.9538 11.6253 11.7607 11.6253 11.5222L11.6267 8.04243C11.6267 7.92793 11.5798 7.81827 11.4968 7.73724C11.4138 7.65621 11.3006 7.61063 11.183 7.61063H7.86614V5.5747C7.86614 4.59615 8.10576 4.09939 9.41561 4.09939L11.3156 4.09872C11.5604 4.09872 11.7588 3.90539 11.7588 3.66714V0.435988C11.7588 0.197956 11.5606 0.00484431 11.316 0.00440392Z' fill='#3B5998')
+                    .av-medium.text-fs-16 Facebook
+                .align-center
+                  a#fb-login-page(href='')
+                    .w-h-64.flex.flex-both-center
+                      svg(width='20' height='24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M6.68377 24C3.11185 23.9794 0.157227 16.6879 0.157227 12.9745C0.157227 6.90873 4.70762 5.58077 6.4613 5.58077C7.25162 5.58077 8.09551 5.89112 8.83984 6.16577C9.36034 6.35734 9.89865 6.55511 10.198 6.55511C10.3772 6.55511 10.7995 6.38688 11.1724 6.23927C11.9675 5.92272 12.957 5.5293 14.1091 5.5293C14.1112 5.5293 14.114 5.5293 14.116 5.5293C14.9763 5.5293 17.5849 5.71811 19.1532 8.0733L19.5206 8.62534L18.9919 9.0243C18.2366 9.5942 16.8585 10.6338 16.8585 12.6931C16.8585 15.132 18.4192 16.07 19.169 16.5211C19.5 16.7202 19.8426 16.9255 19.8426 17.3746C19.8426 17.6678 17.5025 23.9636 14.1043 23.9636C13.2728 23.9636 12.685 23.7137 12.1666 23.4933C11.642 23.2701 11.1895 23.0779 10.4417 23.0779C10.0627 23.0779 9.58341 23.2571 9.07599 23.4473C8.38257 23.7061 7.5977 24 6.70712 24H6.68377Z' fill='black')
+                        path(d='M14.4691 0C14.5576 3.19106 12.2754 5.40488 9.996 5.26603C9.62039 2.71945 12.2752 0 14.4691 0Z' fill='black')
+                    .av-medium.text-fs-16 Apple
+                .align-center
+                  a#google-login-page(href='')
+                    .w-h-64.flex.flex-both-center
+                      svg(width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        g(clip-path='url(#clip0)')
+                          path(d='M24 4.5585C23.1075 4.95 22.1565 5.2095 21.165 5.3355C22.185 4.7265 22.9635 3.7695 23.3295 2.616C22.3785 3.183 21.3285 3.5835 20.2095 3.807C19.3065 2.8455 18.0195 2.25 16.6155 2.25C13.8915 2.25 11.6985 4.461 11.6985 7.1715C11.6985 7.5615 11.7315 7.9365 11.8125 8.2935C7.722 8.094 4.1025 6.1335 1.671 3.147C1.2465 3.8835 0.9975 4.7265 0.9975 5.634C0.9975 7.338 1.875 8.8485 3.183 9.723C2.3925 9.708 1.617 9.4785 0.96 9.117C0.96 9.132 0.96 9.1515 0.96 9.171C0.96 11.562 2.6655 13.548 4.902 14.0055C4.5015 14.115 4.065 14.1675 3.612 14.1675C3.297 14.1675 2.979 14.1495 2.6805 14.0835C3.318 16.032 5.127 17.4645 7.278 17.511C5.604 18.8205 3.4785 19.6095 1.1775 19.6095C0.774 19.6095 0.387 19.5915 0 19.542C2.1795 20.9475 4.7625 21.75 7.548 21.75C16.602 21.75 21.552 14.25 21.552 7.749C21.552 7.5315 21.5445 7.3215 21.534 7.113C22.5105 6.42 23.331 5.5545 24 4.5585Z' fill='#03A9F4')
+                        defs
+                          clippath#clip0
+                            rect(width='24' height='24i' fill='white')
+                    .av-medium.text-fs-16 Twitter
+              .email
+                input(type='text' name='email' placeholder='Email' required='')
+                button(type='submit') Continue with email
+                label
+  // end
+  #tab1.html1
+    .review
+      .review-box
+        .list1
+          a(href='#')
+  form.modal-content.animate(action='/register' method='post')
+    // login
+    .t
+      h1(style='text-align: left;') sign up.
+      .division
+        .line.l
+        span Or login with email
+        .line.r
+    #a.flex.flex-sp-btw
+      .align-center
+        a#google-login-page(href='')
+          .w-h-64.flex.flex-both-center
+            svg(width='23' height='24' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M22.7083 11.8497C22.7083 11.0623 22.6444 10.2707 22.5082 9.49609H11.5829V13.9565H17.8393C17.5797 15.395 16.7455 16.6676 15.524 17.4762V20.3704H19.2566C21.4485 18.353 22.7083 15.3737 22.7083 11.8497Z' fill='#4285F4')
+              path(d='M11.583 23.1666C14.7069 23.1666 17.3414 22.1409 19.2609 20.3703L15.5283 17.4762C14.4899 18.1827 13.1492 18.5828 11.5872 18.5828C8.56539 18.5828 6.00324 16.5441 5.08393 13.8032H1.23218V16.7867C3.19848 20.6981 7.20345 23.1666 11.583 23.1666Z' fill='#34A853')
+              path(d='M5.07963 13.8033C4.59443 12.3648 4.59443 10.8071 5.07963 9.36852V6.38501H1.23213C-0.410711 9.65793 -0.410711 13.5139 1.23213 16.7869L5.07963 13.8033Z' fill='#FBBC04')
+              path(d='M11.583 4.58457C13.2343 4.55904 14.8303 5.18042 16.0263 6.32105L19.3333 3.01408C17.2393 1.04777 14.4601 -0.033268 11.583 0.000780559C7.20345 0.000780559 3.19848 2.4693 1.23218 6.38489L5.07967 9.3684C5.99473 6.62323 8.56114 4.58457 11.583 4.58457Z' fill='#EA4335')
+          .av-medium Google
+      .align-center
+        a#fb-login-page(href='')
+          .w-h-64.flex.flex-both-center
+            svg(width='12' height='22' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M11.316 0.00440392L8.49561 0C5.32698 0 3.27927 2.04452 3.27927 5.20895V7.61063H0.443482C0.198435 7.61063 0 7.80396 0 8.04243V11.5222C0 11.7607 0.198662 11.9538 0.443482 11.9538H3.27927V20.7343C3.27927 20.9728 3.47771 21.1659 3.72276 21.1659H7.42266C7.66771 21.1659 7.86614 20.9726 7.86614 20.7343V11.9538H11.1818C11.4269 11.9538 11.6253 11.7607 11.6253 11.5222L11.6267 8.04243C11.6267 7.92793 11.5798 7.81827 11.4968 7.73724C11.4138 7.65621 11.3006 7.61063 11.183 7.61063H7.86614V5.5747C7.86614 4.59615 8.10576 4.09939 9.41561 4.09939L11.3156 4.09872C11.5604 4.09872 11.7588 3.90539 11.7588 3.66714V0.435988C11.7588 0.197956 11.5606 0.00484431 11.316 0.00440392Z' fill='#3B5998')
+          .av-medium.text-fs-16 Facebook
+      .align-center
+        a#fb-login-page(href='')
+          .w-h-64.flex.flex-both-center
+            svg(width='20' height='24' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M6.68377 24C3.11185 23.9794 0.157227 16.6879 0.157227 12.9745C0.157227 6.90873 4.70762 5.58077 6.4613 5.58077C7.25162 5.58077 8.09551 5.89112 8.83984 6.16577C9.36034 6.35734 9.89865 6.55511 10.198 6.55511C10.3772 6.55511 10.7995 6.38688 11.1724 6.23927C11.9675 5.92272 12.957 5.5293 14.1091 5.5293C14.1112 5.5293 14.114 5.5293 14.116 5.5293C14.9763 5.5293 17.5849 5.71811 19.1532 8.0733L19.5206 8.62534L18.9919 9.0243C18.2366 9.5942 16.8585 10.6338 16.8585 12.6931C16.8585 15.132 18.4192 16.07 19.169 16.5211C19.5 16.7202 19.8426 16.9255 19.8426 17.3746C19.8426 17.6678 17.5025 23.9636 14.1043 23.9636C13.2728 23.9636 12.685 23.7137 12.1666 23.4933C11.642 23.2701 11.1895 23.0779 10.4417 23.0779C10.0627 23.0779 9.58341 23.2571 9.07599 23.4473C8.38257 23.7061 7.5977 24 6.70712 24H6.68377Z' fill='black')
+              path(d='M14.4691 0C14.5576 3.19106 12.2754 5.40488 9.996 5.26603C9.62039 2.71945 12.2752 0 14.4691 0Z' fill='black')
+          .av-medium.text-fs-16 Apple
+      .align-center
+        a#google-login-page(href='')
+          .w-h-64.flex.flex-both-center
+            svg(width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg')
+              g(clip-path='url(#clip0)')
+                path(d='M24 4.5585C23.1075 4.95 22.1565 5.2095 21.165 5.3355C22.185 4.7265 22.9635 3.7695 23.3295 2.616C22.3785 3.183 21.3285 3.5835 20.2095 3.807C19.3065 2.8455 18.0195 2.25 16.6155 2.25C13.8915 2.25 11.6985 4.461 11.6985 7.1715C11.6985 7.5615 11.7315 7.9365 11.8125 8.2935C7.722 8.094 4.1025 6.1335 1.671 3.147C1.2465 3.8835 0.9975 4.7265 0.9975 5.634C0.9975 7.338 1.875 8.8485 3.183 9.723C2.3925 9.708 1.617 9.4785 0.96 9.117C0.96 9.132 0.96 9.1515 0.96 9.171C0.96 11.562 2.6655 13.548 4.902 14.0055C4.5015 14.115 4.065 14.1675 3.612 14.1675C3.297 14.1675 2.979 14.1495 2.6805 14.0835C3.318 16.032 5.127 17.4645 7.278 17.511C5.604 18.8205 3.4785 19.6095 1.1775 19.6095C0.774 19.6095 0.387 19.5915 0 19.542C2.1795 20.9475 4.7625 21.75 7.548 21.75C16.602 21.75 21.552 14.25 21.552 7.749C21.552 7.5315 21.5445 7.3215 21.534 7.113C22.5105 6.42 23.331 5.5545 24 4.5585Z' fill='#03A9F4')
+              defs
+                clippath#clip0
+                  rect(width='24' height='24i' fill='white')
+          .av-medium.text-fs-16 Twitter
+    .email
+      input(type='text' name='username' placeholder='Username' required='')
+      input(type='text' name='email' placeholder='Email' required='')
+      input(type='password' name='password' placeholder='Password' required='')
+
+      button(type='submit') Continue with email
+      label
+      p Already have an Account? 
+          a(href="/login") Sign in
+
+              
+  script(src='js/main.js')

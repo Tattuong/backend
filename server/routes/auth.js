@@ -1,14 +1,24 @@
 const express = require('express')
 const router = express.Router()
-const argon2 = require('argon2')
-const jwt = require('jsonwebtoken')
+const argon2 = require('argon2') // xac minh mat khau
+const jwt = require('jsonwebtoken') //quan li viec login, logout, xac thuc nguoi dung
+const UserController = require('../controller/usercontroller') 
 const verifyToken = require('../middleware/auth')
 
+router.get('/register',(req, res) => res.render('register'))
+
+
 const User = require('../models/User')
+router.get('/', (req, res) => res.render('index'))
 
 // @route GET api/auth
 // @desc Check if user is logged in
 // @access Public
+// xu ly yeu cau, ham xy ly 
+//call api login - get acces token
+//xu li khuon mau
+// noi chuyen qua database = bang bat dong bo
+
 router.get('/', verifyToken, async (req, res) => {
 	try {
 		const user = await User.findById(req.userId).select('-password')
@@ -21,60 +31,18 @@ router.get('/', verifyToken, async (req, res) => {
 	}
 })
 
-// @route POST api/auth/register
-// @desc Register user
-// @access Public
-router.post('/register', async (req, res) => {
-	const { username, password } = req.body
 
-	// Simple validation
-	if (!username || !password)
-		return res
-			.status(400)
-			.json({ success: false, message: 'Missing username and/or password' })
+router.post('/register', UserController.regitserUser)
+router.get('/login', (req, res) => res.render('login'))
 
-	try {
-		// Check for existing user
-		const user = await User.findOne({ username })
-
-		if (user)
-			return res
-				.status(400)
-				.jsonwebtokenjson({ success: false, message: 'Username already taken' })
-
-		// All good
-		const hashedPassword = await argon2.hash(password)
-		const newUser = new User({ username, password: hashedPassword })
-		await newUser.save()
-
-		// Return token
-		const accessToken = jwt.sign(
-			{ userId: newUser._id },
-			process.env.ACCESS_TOKEN_SECRET
-		)
-
-		res.json({
-			success: true,
-			message: 'User created successfully',
-			accessToken
-		})
-	} catch (error) {
-		console.log(error)
-		res.status(500).json({ success: false, message: 'Internal server error' })
-	}
-})
-
-// @route POST api/auth/login
-// @desc Login user
-// @access Public
 router.post('/login', async (req, res) => {
-	const { username, password } = req.body
+	const { username, password, } = req.body
 
 	// Simple validation
 	if (!username || !password)
 		return res
 			.status(400)
-			.json({ success: false, message: 'Missing username and/or password' })
+			.json({ success: false, message: 'Missing username or password' })
 
 	try {
 		// Check for existing user
