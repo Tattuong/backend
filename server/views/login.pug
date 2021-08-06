@@ -13,10 +13,11 @@ head
   link(rel='stylesheet' href='../stylesheets/style1.css')
   title Buy me a coffe
 
-  form.modal-content.animate(action='/login' method='post')
+  form.modal-content.animate(action='' method='')
     // login
     .t
       h1(style='text-align: left;') Login.
+      p(id='success' style='color: red')
       .division
         .line.l
         span Or login with email
@@ -55,11 +56,14 @@ head
                   rect(width='24' height='24i' fill='white')
           .av-medium.text-fs-16 Twitter
     .email
-      input(type='text' name='username' placeholder='Username' required='')
-      input(type='password' name='password' placeholder='Password' required='')
+      input(type='text' name='username' placeholder='Username' required='' id='username')
+      input(type='password' name='password' placeholder='Password' required='' id='password')
 
-      button(type='submit') Continue with email
+      button(type='button' onclick = 'loginUser(event)') Continue with email
+      p(id='status' style='color: red')
+
       label
       p New to Sololearn?  
           a(href="/register") Create an Account      
   script(src='js/main.js')
+  script(src='js/register.js')

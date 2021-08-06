@@ -77,7 +77,7 @@ head
       .review-box
         .list1
           a(href='#')
-  form.modal-content.animate(action='/register' method='post')
+  form.modal-content.animate(action='' method='')
     // login
     .t
       h1(style='text-align: left;') sign up.
@@ -119,14 +119,23 @@ head
                   rect(width='24' height='24i' fill='white')
           .av-medium.text-fs-16 Twitter
     .email
-      input(type='text' name='username' placeholder='Username' required='')
-      input(type='text' name='email' placeholder='Email' required='')
-      input(type='password' name='password' placeholder='Password' required='')
+      input(type='text' name='username' placeholder='Username' required='' id='username')
+      span.form-message
 
-      button(type='submit') Continue with email
+      input(type='text' name='email' placeholder='Email' required='' id='email')
+      span.form-message
+
+      input(type='password' name='password' placeholder='Password' id='password' required='')
+
+      button(type='button' onclick='registerUser(event)') Continue with email
+      p(id='status' style='color: red')
+      
+
       label
       p Already have an Account? 
           a(href="/login") Sign in
 
               
   script(src='js/main.js')
+  script(src='js/register.js')
+  script(src='js/validator.js')

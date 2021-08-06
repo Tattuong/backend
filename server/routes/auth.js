@@ -4,8 +4,12 @@ const argon2 = require('argon2') // xac minh mat khau
 const jwt = require('jsonwebtoken') //quan li viec login, logout, xac thuc nguoi dung
 const UserController = require('../controller/usercontroller') 
 const verifyToken = require('../middleware/auth')
+const passport = require('passport');
+
+// const logout = request ('express-passport-logout');
 
 router.get('/register',(req, res) => res.render('register'))
+router.get('/home', (req, res) => res.render('home'))
 
 
 const User = require('../models/User')
@@ -77,4 +81,12 @@ router.post('/login', async (req, res) => {
 	}
 })
 
+
+router.get('/logout', async (req, res) => {
+	req.logout();
+	req.flash('success', 'You are logged out');
+	res.redirect('/');
+  });
+
+  
 module.exports = router
