@@ -5,7 +5,9 @@ const userSchema  = new Schema({
     username:{
         type: String,
         require: true,
-        unique: true // gia tri duy nhat
+        unique: true,
+        min: 6,
+        max: 255
     },
     email: {
         type:String,
@@ -14,7 +16,9 @@ const userSchema  = new Schema({
     },
     password:{
         type: String,
-        require: true
+        require: true,
+        min: 6,
+        max: 255
     },
     CreatedAt: {
         type: Date,

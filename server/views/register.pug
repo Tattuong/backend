@@ -10,6 +10,7 @@ head
   script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
   link(rel='icon' type='image/png' sizes='32x32' href='./image/apple-icon-120x120.webp')
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   link(rel='stylesheet' href='../stylesheets/style1.css')
   title Buy me a coffe
 .container-fluid
@@ -77,7 +78,7 @@ head
       .review-box
         .list1
           a(href='#')
-  form.modal-content.animate(action='' method='')
+  form#form.modal-content.animate(action='' method='')
     // login
     .t
       h1(style='text-align: left;') sign up.
@@ -120,17 +121,16 @@ head
           .av-medium.text-fs-16 Twitter
     .email
       input(type='text' name='username' placeholder='Username' required='' id='username')
-      span.form-message
+      p.error-msg error
 
       input(type='text' name='email' placeholder='Email' required='' id='email')
-      span.form-message
+      p.error-msg error
 
       input(type='password' name='password' placeholder='Password' id='password' required='')
+      p.error-msg error
 
       button(type='button' onclick='registerUser(event)') Continue with email
       p(id='status' style='color: red')
-      
-
       label
       p Already have an Account? 
           a(href="/login") Sign in
@@ -138,4 +138,4 @@ head
               
   script(src='js/main.js')
   script(src='js/register.js')
-  script(src='js/validator.js')
+  script(src='js/api.js')

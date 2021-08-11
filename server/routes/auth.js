@@ -5,6 +5,12 @@ const jwt = require('jsonwebtoken') //quan li viec login, logout, xac thuc nguoi
 const UserController = require('../controller/usercontroller') 
 const verifyToken = require('../middleware/auth')
 const passport = require('passport');
+const { check, validationresult} = require('express-validator')
+
+
+const authRouter = express.Router() 
+
+
 
 // const logout = request ('express-passport-logout');
 
@@ -36,10 +42,59 @@ router.get('/', verifyToken, async (req, res) => {
 })
 
 
-router.post('/register', UserController.regitserUser)
+authRouter.post('/register', UserController.regitserUser)
 router.get('/login', (req, res) => res.render('login'))
 
-router.post('/login', async (req, res) => {
+//  validator-express
+router.post("/register", [
+    check("emaild", "Please input a valid email")
+        .isEmail(),
+    check("password", "Please input a password with a min length of 6")
+        .isLength({min: 6})
+], async (req, res) => {
+    const { email, password } = req.body;
+
+    // Validate the inputs 
+    const errors = validationResult(req);
+
+    if(!errors.isEmpty()){
+        return res.status(422).json({
+            errors: errors.array()
+        })
+    }
+
+    // Validate if the user doesnt already exist;
+    let user = users.find((user) => {
+        return user.email === email
+    });
+
+    if(user) {
+        return res.status(422).json({
+            errors: [
+                {
+                    msg: "This user already exists",
+                }
+            ]
+        })
+    }
+
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Save the password into the db
+    users.push({
+        email,
+        password: hashedPassword
+    });
+
+    const token = await JWT.sign({ email }, "nfb32iur32ibfqfvi3vf932bg932g932", {expiresIn: 360000});
+
+    res.json({
+        token
+    })
+})
+
+authRouter.post('/login', async (req, res) => {
 	const { username, password, } = req.body
 
 	// Simple validation
@@ -82,11 +137,13 @@ router.post('/login', async (req, res) => {
 })
 
 
-router.get('/logout', async (req, res) => {
-	req.logout();
-	req.flash('success', 'You are logged out');
-	res.redirect('/');
-  });
 
-  
-module.exports = router
+  authRouter.get('/me', (req,res)=> {
+	  console.log(req.headers.authorization); 
+  }) 
+
+
+module.exports = {
+	router, 
+	authRouter
+}

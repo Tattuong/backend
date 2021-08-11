@@ -1496,3 +1496,7 @@ b{
 /* .flex.flex-vert-center:hover{
     border-bottom: 1px solid red;
 } */
+.email .error-msg{
+    visibility: visible;
+    color: red;
+}
