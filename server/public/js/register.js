@@ -91,7 +91,7 @@ const loginUser = async (event) => {
       } else {
         console.log("user already");
         document.getElementById("status").innerHTML =
-          "Username or email  already taken ";
+          "Username or Password error";
       }
     })
     .catch((err) => {
