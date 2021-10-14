@@ -121,13 +121,13 @@ head
           .av-medium.text-fs-16 Twitter
     .email
       input(type='text' name='username' placeholder='Username' required='' id='username')
-      p.error-msg error
+      //- p.error-msg error
 
       input(type='text' name='email' placeholder='Email' required='' id='email')
-      p.error-msg error
+      //- p.error-msg error
 
       input(type='password' name='password' placeholder='Password' id='password' required='')
-      p.error-msg error
+      //- p.error-msg error
 
       button(type='button' onclick='registerUser(event)') Continue with email
       p(id='status' style='color: red')

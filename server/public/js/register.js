@@ -44,36 +44,43 @@ const password = document.getElementById("password");
     //   errMsg.innerText = message;
     // }
 
-
 const registerUser = async (event) => {
   event.preventDefault();
   registerAPI(
     document.getElementById("username").value,
     document.getElementById("email").value,
     document.getElementById("password").value
-  )
-    .then(async (res) => {
-      if (res.ok) {
-        window.location.replace("/login");
-        // function registerUser(event) {
-        //     toast({
-        //       title: "Thành công!",
-        //       message: "Bạn đã đăng ký thành công.",
-        //       type: "success",
-        //       duration: 5000
-        //     });
-        //   }
-      } else {
-        console.log("user already");
-        document.getElementById("status").innerHTML =
-          "Username or email  already taken ";
+    )
+    .then(response => response.json())
+    .then( json => {
+      if(json.success){
+        window.location.replace('/login')
       }
+      else{
+        console.log('already')
+        document.getElementById('status').innerHTML = 'already user' 
+      }
+      console.log(json)
     })
-    .catch((err) => {
-      console.error("Error:", error);
-    });
-};
+    .catch( err => {
+      console.log(err)
 
+    })
+
+    // .then(async (res) => {
+    //   console.log(res)
+    //   if (res.ok) {
+    //     window.location.replace("/login");
+    //   } else {
+    //     console.log("user already");
+    //     document.getElementById("status").innerHTML =
+    //       "Username or email  already taken ";
+    //   }
+    // })
+    // .catch((err) => {
+    //   console.error("Error:", error);
+    // });
+};
 
 
 // login

@@ -100,6 +100,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(flash());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3012;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

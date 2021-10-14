@@ -25,6 +25,8 @@ const registerAPI = async (username, email, password) => {
   });
 };
 
+
+
 const getMeAPI = async (token) => {
   return await fetch(baseUrl("auth/me"), {
     method: "GET",
